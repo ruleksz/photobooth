@@ -8,8 +8,12 @@ export default function Home() {
         Photobooth Studio
       </h1>
 
-      <p className="mb-12 text-center text-zinc-300">
+      <p className="mb-6 text-center text-zinc-300">
         Choose your favorite frame and start capturing memories
+      </p>
+
+      <p className="text-center text-zinc-400 mb-12">
+        By: Ruleks15
       </p>
 
       <div className="flex flex-wrap justify-center gap-8">
