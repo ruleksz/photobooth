@@ -141,59 +141,69 @@ export default function CameraPage({
     };
 
     return (
-        <div className="w-full lg:flex flex flex-col min-h-screen items-center justify-center gap-12 p-10 bg-teal-200">
-            {/* Preview Frame */}
+        <div className="min-h-screen bg-teal-200 p-4 lg:p-10">
+            <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-start lg:justify-center">
 
-            <div className="flex flex-col items-center gap-4">
-                <div className="flex lg:h-[500px] lg:w-[400px] h-[500px] w-[350px] items-center justify-center rounded-2xl border-2 border-dashed">
-                    <div className="relative">
-                        <video
-                            ref={videoRef}
-                            autoPlay
-                            playsInline
-                            muted
-                            className="lg:h-[500px] lg:w-[400px] h-[500px] w-[350px] rounded-2xl object-cover scale-x-[-1]"
+                {/* CAMERA SECTION */}
+
+                <div className="flex flex-col items-center gap-4">
+                    <div className="flex h-[500px] w-[350px] items-center justify-center rounded-2xl border-2 border-dashed lg:h-[500px] lg:w-[400px]">
+
+                        <div className="relative">
+                            <video
+                                ref={videoRef}
+                                autoPlay
+                                playsInline
+                                muted
+                                className="h-[500px] w-[350px] rounded-2xl object-cover scale-x-[-1] lg:h-[500px] lg:w-[400px]"
+                            />
+
+                            {countdown && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                                    <span className="text-6xl font-bold text-white lg:text-8xl">
+                                        {countdown}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+
+                        <canvas
+                            ref={canvasRef}
+                            className="hidden"
                         />
-
-                        {countdown && (
-                            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                                <span className="text-8xl font-bold text-white">
-                                    {countdown}
-                                </span>
-                            </div>
-                        )}
                     </div>
 
-                    <canvas
-                        ref={canvasRef}
-                        className="hidden"
-                    />
+                    <button
+                        onClick={startSession}
+                        disabled={isCapturing}
+                        className="w-full rounded-xl bg-black px-6 py-3 text-white disabled:opacity-50"
+                    >
+                        {isCapturing
+                            ? "Capturing..."
+                            : "Start Session"}
+                    </button>
                 </div>
 
-                <button
-                    onClick={startSession}
-                    disabled={isCapturing}
-                    className="rounded-xl bg-black px-6 py-3 text-white disabled:opacity-50"
-                >
-                    {isCapturing
-                        ? "Capturing..."
-                        : "Start Session"}
-                </button>
+                {/* TEMPLATE SECTION */}
+
+                <div className="flex flex-col items-center gap-4">
+                    <div ref={frameRef}>
+                        <FrameRenderer
+                            frameId={frameId}
+                            photos={photos}
+                        />
+                    </div>
+
+                    <button
+                        onClick={downloadPhotostrip}
+                        disabled={photos.length === 0}
+                        className="w-full rounded-xl bg-green-600 px-6 py-3 text-white disabled:opacity-50"
+                    >
+                        Download Photostrip
+                    </button>
+                </div>
 
             </div>
-            <div ref={frameRef}>
-                <FrameRenderer
-                    frameId={frameId}
-                    photos={photos}
-                />
-            </div>
-            <button
-                onClick={downloadPhotostrip}
-                disabled={photos.length === 0}
-                className="rounded-xl bg-green-600 px-6 py-3 text-white disabled:opacity-50"
-            >
-                Download Photostrip
-            </button>
         </div>
     );
 }

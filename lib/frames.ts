@@ -11,4 +11,24 @@ export const frames = [
         id: "blue-party",
         name: "Blue Party",
     },
+    {
+        id: "y2k-chrome",
+        name: "Y2K Chrome",
+    },
+    {
+        id: "scrapbook",
+        name: "Scrapbook",
+    },
+    {
+        id: "vintage-film",
+        name: "Vintage Film",
+    },
+    {
+        id: "horizontal-classic",
+        name: "Horizontal Classic",
+    },
+    {
+        id: "sakura-festival",
+        name: "Sakura Festival",
+    }
 ];
