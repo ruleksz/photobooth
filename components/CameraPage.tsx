@@ -141,7 +141,7 @@ export default function CameraPage({
     };
 
     return (
-        <div className="min-h-screen bg-teal-200 p-4 lg:p-10">
+        <div className="min-h-screen bg-gradient-to-br from-zinc-950 via-purple-950 to-black p-4 lg:p-10">
             <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-start lg:justify-center">
 
                 {/* CAMERA SECTION */}
