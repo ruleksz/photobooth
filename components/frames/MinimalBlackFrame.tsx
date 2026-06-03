@@ -33,7 +33,7 @@ export default function MinimalBlackFrame({
                         <img
                             src={photos[index]}
                             alt={`Photo ${index + 1}`}
-                            className="h-32 w-full object-cover"
+                            className="h-32 w-full object-cover scale-x-[-1]"
                         />
                     ) : (
                         <div className="flex h-32 items-center justify-center text-sm text-amber-500">

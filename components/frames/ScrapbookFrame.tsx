@@ -26,7 +26,7 @@ export default function ScrapbookFrame({
                         <img
                             src={photos[index]}
                             alt={`Photo ${index + 1}`}
-                            className="h-32 w-full rounded-lg object-cover"
+                            className="h-32 w-full rounded-lg object-cover scale-x-[-1]"
                         />
                     ) : (
                         <div className="flex h-32 items-center justify-center rounded-lg bg-zinc-100 text-zinc-400">

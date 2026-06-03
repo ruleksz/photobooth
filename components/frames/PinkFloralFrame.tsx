@@ -30,7 +30,7 @@ export default function PinkFloralFrame({
                         <img
                             src={photos[index]}
                             alt={`Photo ${index + 1}`}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover scale-x-[-1]"
                         />
                     ) : (
                         <div className="flex h-full items-center justify-center text-sm text-gray-400">

@@ -24,7 +24,7 @@ export default function VintageFilmFrame({
                         <img
                             src={photos[index]}
                             alt={`Photo ${index + 1}`}
-                            className="h-32 w-full object-cover sepia"
+                            className="h-32 w-full object-cover sepia scale-x-[-1]"
                         />
                     ) : (
                         <div className="flex h-32 items-center justify-center bg-[#d8c7a9] text-[#5a4634]">

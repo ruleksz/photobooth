@@ -20,7 +20,7 @@ export default function HorizontalClassicFrame({
                             <img
                                 src={photos[index]}
                                 alt={`Photo ${index + 1}`}
-                                className="h-[220px] w-full object-cover"
+                                className="h-[220px] w-full object-cover scale-x-[-1]"
                             />
                         ) : (
                             <div className="flex h-[220px] items-center justify-center text-zinc-500">
